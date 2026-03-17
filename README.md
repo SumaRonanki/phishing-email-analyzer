@@ -1,37 +1,37 @@
-# 🛡️ LLM-Powered Phishing Email Analyzer
+# LLM-Powered Phishing Email Analyzer
 
 An end-to-end Machine Learning and AI pipeline designed to detect, score, and explain phishing attempts with **98.3% accuracy**. This project combines traditional Natural Language Processing (NLP) with a human-centric LLM explanation layer to bridge the gap between "black-box" model predictions and actionable security intelligence.
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 Phishing remains the #1 initial entry vector for cyber-attacks worldwide. This project provides a full-stack solution that:
 1.  **Classifies** emails as "Phishing" or "Legitimate" using a hybrid ML model.
 2.  **Quantifies** risk via a transparent 0-100 Threat Scoring engine.
 3.  **Explains** findings using an LLM (GPT-3.5) to provide professional, SOC-analyst style summaries.
 
-## 📊 Dataset & Features
+## Dataset & Features
 - **Source:** Combined dataset of ~82,000 emails (Phishing vs. Benign).
 - **Preprocessing:** Automated cleaning pipeline that handles HTML stripping, URL/Email tokenization, and whitespace normalization.
 - **Hybrid Feature Engineering:**
     - **TF-IDF Vectorization:** Captures 5,000 linguistic patterns and N-grams.
     - **Standardized Structural Indicators:** Custom logic to detect urgent language, credential harvesting hooks, financial pressure keywords, and suspicious URL counts, all normalized via **StandardScaler**.
 
-## ⚙️ Technical Architecture
+## Technical Architecture
 
-### 🧠 Model Training
+### Model Training
 The project implements a comparison suite between **Logistic Regression** and **Multinomial Naive Bayes**. The current production model leverages **Logistic Regression** due to its superior F1-score and robustness.
 - **Accuracy:** 98.3%
 - **Precision:** 98.0%
 - **Recall:** 98.8%
 
-### 🎯 Threat Scoring Engine
+### Threat Scoring Engine
 A transparent logic layer calculates a **0-100 Risk Score** based on:
 - **Model Confidence (50%):** Weighted probability from the ML classifier.
 - **Technical Indicators (50%):** Hard-coded points for high-risk elements (Urgent language, suspicious URLs, credential requests).
 - **Severity Bands:** *Low (0-39)*, *Medium (40-69)*, *High (70-100)*.
 
-### 🤖 LLM Explanation Layer
+### LLM Explanation Layer
 To make the tool useful for non-technical users, an **LLM Explainer** (Powered by OpenAI) generates:
 - **Narrative Explanation:** 2-3 sentences explaining exactly why the email is suspicious.
 - **Top 3 Red Flags:** The most critical indicators found in the text.
@@ -40,7 +40,7 @@ To make the tool useful for non-technical users, an **LLM Explainer** (Powered b
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```text
 llm-phishing-analyzer/
 ├── app/
@@ -64,7 +64,7 @@ llm-phishing-analyzer/
 
 ---
 
-## 🚀 Setup & Usage
+## Setup & Usage
 
 ### 1. Installation
 ```powershell
@@ -96,7 +96,7 @@ Create an `.env` file or set your environment variable:
 
 ---
 
-## 🎓 Interview Preparation (Cheat Sheet)
+## Interview Preparation (Cheat Sheet)
 If you're presenting this project in an interview, be prepared to discuss these core concepts:
 
 1. **The Cold Start Problem:** How do you handle emails with no historical data? 
@@ -110,12 +110,12 @@ If you're presenting this project in an interview, be prepared to discuss these 
 
 ---
 
-## 📝 Resume-Ready Highlights
+## Resume-Ready Highlights
 - **Engineered a hybrid phishing detection pipeline** achieving **98.3% accuracy** on a dataset of 80k+ emails by combining TF-IDF vectorization with standardized structural cybersecurity indicator extraction.
 - **Developed a transparent 0-100 Threat Scoring engine** that maps model probability and technical indicators to human-readable severity bands (Low, Medium, High).
 - **Integrated an LLM-based explanation layer** using the OpenAI API to translate complex ML features into professional SOC analyst summaries and actionable red flags.
 
-## 🔮 Future Improvements
+## Future Improvements
 - [ ] Integration with real-world email APIs (IMAP/Outlook).
 - [ ] Support for deep learning models (LSTMs/Transformers).
 - [ ] Multi-language support for international phishing campaigns.
